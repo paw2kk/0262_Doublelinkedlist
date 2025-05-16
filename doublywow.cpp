@@ -8,6 +8,7 @@ class Node{
     Node *next;
     Node *prev;
 };
+
 class DoubleLinkedList{
     private:
     Node *START;
@@ -18,7 +19,6 @@ class DoubleLinkedList{
     }
 
     void addNode(){
-        void addNode(){
             int nim;
             cout << "\nEnter the roll number of the student: ";
             cin >> nim;
@@ -31,12 +31,12 @@ class DoubleLinkedList{
 
             //Step 3 : Insert at beginning if list is empty or nim is smallest
             if (START == NULL || nim <= START->noMhs){
-                if (START != Null && nim == START->noMhs){
+                if (START != NULL && nim == START->noMhs){
                     cout << "\nDuplicate number not allowed" << endl;
                     return;
                 }
                 //Step 4 : newNode.next = START
-                newNode-> = START;
+                newNode->next = START;
 
                 //Step 5 : START.prev = newNode (if START exist)
                 if (START != NULL)
@@ -56,7 +56,7 @@ class DoubleLinkedList{
                 {
                     current = current->next;
                 }
-                if (current->next != NULL && nim == current->next-.noMhs)
+                if (current->next != NULL && nim == current->next->noMhs)
                 {
                     cout << "\nDuplicate roll numbers not allowed" << endl;
                     return;
@@ -67,7 +67,7 @@ class DoubleLinkedList{
 
                 //insert last node
                 if (current->next != NULL)
-                current-?next->prev = newNode; //Step 9c : current.next.prev = newNode
+                current->next->prev = newNode; //Step 9c : current.next.prev = newNode
 
                 current->next = newNode; //Step 9d : current.next = newNode
         }
@@ -115,7 +115,7 @@ class DoubleLinkedList{
             cout << "Record with roll number " << rollNo << " deleted" << endl;
         }
 
-        void treaverse(){
+        void traverse(){
             if (START == NULL)
             {
                 cout << "\nList is empty" << endl;
@@ -131,21 +131,21 @@ class DoubleLinkedList{
                 cout << i + 1 << ". " << currentNode->noMhs << " " << endl;
 
                 //Step 3 : Move to next node
-                currentNode == currentNode->next;
+                currentNode = currentNode->next;
                 i++;
             }
         }
-        coid retraverse(){
+        void retraverse(){
             if (START == NULL){
                 cout << "\nList is empty" << endl;
                 return;
             }
             //Step 1 : Move to last node
             Node *currentNode = START;
-            int = 0;
+            int i = 0;
             while (currentNode->next != NULL){
                 currentNode = currentNode->next;
-                i++
+                i++;
             }
 
             //Step 2 : Traverse backward
@@ -182,16 +182,13 @@ class DoubleLinkedList{
                 cout << "Roll Number: " << current->noMhs << endl;
             }
         }
-    };
-}
+};
 
 int main(){
     DoubleLinkedList list;
     char choice;
 
     do {
-        do
-{
         cout << "\nMenu:\n";
         cout << "1. Add Record\n";
         cout << "2. Delete Record\n";
@@ -215,7 +212,7 @@ int main(){
             list.traverse();
             break;
         case '4':
-            list.revtraverse();
+            list.retraverse();
             break;
         case '5':
             list.searchData();
@@ -225,12 +222,12 @@ int main(){
         default:
             cout << "Invalid option\n";
         }
+
         cout << "\nPress Enter to continue...";
         cin.ignore();
         cin.get();
         cout << endl;
         system("clear");
-        } while (choice != '6');
-            
 
-}
+        } while (choice != '6');
+    }
