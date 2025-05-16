@@ -116,7 +116,18 @@ class DoubleLinkedList{
         }
 
         void treaverse(){
-            
+            if (START == NULL)
+            {
+                cout << "\nList is empty" << endl;
+            }
+
+            //Step 1 : Mark firts node as currentNode
+            Node *currentNode = START;
+
+            //Step 2 : Repeat until currentNode == NULL
+            cout << "\nRecords in ascending order of roll number are:\n";
+            int i = 0;
+            while (currentNode != NULL)
         }
     }
 }
